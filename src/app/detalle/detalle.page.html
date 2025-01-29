@@ -1,10 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-title>
       Recetas
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-item>
@@ -46,7 +50,8 @@
     <ion-input [(ngModel)]="document.data.categoria"></ion-input>
   </ion-item>
 
-  <ion-button (click)="clicBotonBorrar()">Borrar receta</ion-button>
-  <ion-button (click)="clicBotonModificar()">Modificar receta</ion-button>
-  <ion-button (click)="clicBotonVolver()">Volver</ion-button>
+  <ion-button *ngIf="isNew" expand="full" (click)="clicBotonInsertar()">Guardar</ion-button>
+  <ion-button *ngIf="!isNew" expand="full" (click)="clicBotonModificar()">Modificar receta</ion-button>
+  <ion-button *ngIf="!isNew" expand="full" (click)="clicBotonBorrar()">Borrar receta</ion-button>
+  <ion-button expand="full" (click)="clicBotonVolver()">Volver</ion-button>
 </ion-content>

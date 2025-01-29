@@ -15,12 +15,16 @@ export class DetallePage implements OnInit {
     id: "",
     data: {} as Receta
   };
+  isNew: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute, private firestoreService: FirestoreService, private router: Router) { }
 
   ngOnInit() {
     let idRecibido = this.activatedRoute.snapshot.paramMap.get('id');
-    if (idRecibido != null) {
+    if (idRecibido === 'nuevo') {
+      this.isNew = true;
+      this.document.data = {} as Receta;
+    } else if (idRecibido != null) {
       this.id = idRecibido;
       this.consultarPorId(this.id);
     } else {
