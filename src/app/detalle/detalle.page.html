@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Recetas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]="document.data.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ingredientes</ion-label>
+    <ion-textarea [(ngModel)]="document.data.ingredientes"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Instrucciones</ion-label>
+    <ion-textarea [(ngModel)]="document.data.instrucciones"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tiempo de Preparación (min)</ion-label>
+    <ion-input type="number" [(ngModel)]="document.data.tiempoPreparacion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Dificultad</ion-label>
+    <ion-select [(ngModel)]="document.data.dificultad">
+      <ion-select-option value="Fácil">Fácil</ion-select-option>
+      <ion-select-option value="Media">Media</ion-select-option>
+      <ion-select-option value="Difícil">Difícil</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Porciones</ion-label>
+    <ion-input type="number" [(ngModel)]="document.data.porciones"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Categoría</ion-label>
+    <ion-input [(ngModel)]="document.data.categoria"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="clicBotonBorrar()">Borrar receta</ion-button>
+  <ion-button (click)="clicBotonModificar()">Modificar receta</ion-button>
+  <ion-button (click)="clicBotonVolver()">Volver</ion-button>
+</ion-content>
