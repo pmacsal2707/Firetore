@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../firestore.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Receta } from '../receta';
+import { OverlayEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-detalle',
@@ -72,5 +73,26 @@ export class DetallePage implements OnInit {
 
   clicBotonVolver() {
     this.router.navigate(['/home']);
+  }
+
+  public alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+        this.router.navigate(['/home']);
+      },
+    },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        this.clicBotonBorrar();
+      },
+    },
+  ];
+
+  setResult(event: CustomEvent<OverlayEventDetail>) {
+    console.log(`Dismissed with role: ${event.detail.role}`);
   }
 }
