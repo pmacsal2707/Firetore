@@ -52,6 +52,6 @@
   <ion-button *ngIf="isNew" expand="full" (click)="clicBotonInsertar()">Guardar</ion-button>
   <ion-button *ngIf="!isNew" expand="full" (click)="clicBotonModificar()">Modificar receta</ion-button>
   <ion-button id="present-alert" *ngIf="!isNew" expand="full">Borrar receta</ion-button>
-  <ion-alert trigger="present-alert" header="Confirmación" [subHeader]="document.data.nombre" [message]="'¿Está seguro de que desea borrar la receta ' + document.data.nombre + '?'" [buttons]="alertButtons" (didDismiss)="setResult($event)"></ion-alert>
+  <ion-alert trigger="present-alert" header="Confirmación" subHeader="document.data.nombre" message="¿Está seguro de que desea borrar esta receta?" [buttons]="alertButtons" (didDismiss)="setResult($event)"></ion-alert>
   <ion-button expand="full" (click)="clicBotonVolver()">Volver</ion-button>
 </ion-content>
