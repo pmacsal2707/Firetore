@@ -5,12 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyCT1NglWcIgucQMm6XapqAcA0pdsVXtGa8",
-    authDomain: "proyactoalimentos.firebaseapp.com",
-    projectId: "proyactoalimentos",
-    storageBucket: "proyactoalimentos.firebasestorage.app",
-    messagingSenderId: "118085880525",
-    appId: "1:118085880525:web:e5077996233a409a76b784"
+    apiKey: "AIzaSyD-XegLWrIdZJWTC81wnjHB5nQkUkhIxCU",
+    authDomain: "ejemplo-tareas-b68dd.firebaseapp.com",
+    projectId: "ejemplo-tareas-b68dd",
+    storageBucket: "ejemplo-tareas-b68dd.appspot.com",
+    messagingSenderId: "962643459473",
+    appId: "1:962643459473:web:e0767bbeb3926c253d2e30",
+    measurementId: "G-14DZEKLYJK"
   }
 };
 
